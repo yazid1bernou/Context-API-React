@@ -1,10 +1,12 @@
 import Two from "./Two";
-function One (props){
+import ToggleTheme from "./ToggleTheme";
+function One (){
      
     return (
         <div>
-           <h1>This is One. </h1> 
-           <Two theme={props.theme}/>
+           <h1 >This is One. </h1> 
+           <Two/>
+           <ToggleTheme />
         </div>
     )
 }

@@ -1,9 +1,26 @@
 import React from 'react'
+import ThemeContext from '../Context/ThemeContext'
 
-export default function ToggleTheme(props) {
-  return (
-    <div>
-         <button type="button" onClick={props.toggleTheme }> Chnage Theme</button>
-    </div>
-  )
+class  ToggleTheme extends React.Component {
+    
+    componentDidUpdate() {
+      console.log(this.context.theme)
+    }
+    render () {
+        return (
+
+
+            <div>
+                     
+               
+                    <button type="button" onClick={this.context.toggleTheme }> Change Theme { this.context.theme === 'dark' ? 'light' : 'dark'}</button>
+                     
+                 
+                
+            </div>
+          )
+    }
+ 
 }
+ToggleTheme.contextType = ThemeContext ;
+export default ToggleTheme ;
